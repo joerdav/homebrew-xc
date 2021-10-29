@@ -5,21 +5,21 @@
 class Xc < Formula
   desc "A cli to eXeCute project tasks from a readme file"
   homepage "https://github.com/Joe-Davidson1802/xc"
-  version "0.0.43"
+  version "0.0.44"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.43/xc_0.0.43_darwin_arm64.tar.gz"
-      sha256 "c5b32b5af3a7d9525a45cbc758c16525857ecf6ccab2bd135b2ddd183b96d375"
+    if Hardware::CPU.intel?
+      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.44/xc_0.0.44_darwin_amd64.tar.gz"
+      sha256 "a34178d6d7834f03d3fbc180958717a365e7a1ce9bcaf875e01c70c15cfe63ea"
 
       def install
         bin.install "xc"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.43/xc_0.0.43_darwin_amd64.tar.gz"
-      sha256 "3edc6ff05289213ad81aee66bc4dcb093a7f561a192d45349cf903e254a48996"
+    if Hardware::CPU.arm?
+      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.44/xc_0.0.44_darwin_arm64.tar.gz"
+      sha256 "69ce5e3f4f47e50524e538d93c0b1590c73ed5d029d3653d489a8f90631d67b0"
 
       def install
         bin.install "xc"
@@ -28,25 +28,25 @@ class Xc < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.43/xc_0.0.43_linux_armv7.tar.gz"
-      sha256 "e71568fae1e5913f9cb041569e7b6429940668cc48f411d0fd94c8194f79dcab"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.44/xc_0.0.44_linux_arm64.tar.gz"
+      sha256 "663e81e2bb605771ab925e85d41c08e4a9c5593c8505e3350e9449769435497d"
 
       def install
         bin.install "xc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.43/xc_0.0.43_linux_amd64.tar.gz"
-      sha256 "cd85a58a8b87318b992b92651f6180f414907c5ba1880f9793f24c6f06878928"
+      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.44/xc_0.0.44_linux_amd64.tar.gz"
+      sha256 "87cf81f5184ee67ec63351334ed054cd9ae551589bf0d39a1efa3f8a12ded912"
 
       def install
         bin.install "xc"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.43/xc_0.0.43_linux_arm64.tar.gz"
-      sha256 "ae92a4f49baa26ccaac8289254a1a78b58a06b95343bb079f487f3a84a48ea13"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/Joe-Davidson1802/xc/releases/download/v0.0.44/xc_0.0.44_linux_armv7.tar.gz"
+      sha256 "c20de399265b4d0e0eef5f30d74f1f1fda05769ed1f07395318e087f44788fa2"
 
       def install
         bin.install "xc"
