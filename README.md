@@ -1,10 +1,10 @@
-# Joe-davidson1802 Xc
+# joerdav
 
 ## How do I install these formulae?
 
-`brew install joe-davidson1802/xc/<formula>`
+`brew install joerdav/xc/<formula>`
 
-Or `brew tap joe-davidson1802/xc` and then `brew install <formula>`.
+Or `brew tap joerdav/xc` and then `brew install <formula>`.
 
 ## Documentation
 
