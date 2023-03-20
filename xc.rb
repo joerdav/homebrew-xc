@@ -5,21 +5,21 @@
 class Xc < Formula
   desc "Self documenting task runner"
   homepage "https://github.com/joerdav/xc"
-  version "0.1.181"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/joerdav/xc/releases/download/v0.1.181/xc_0.1.181_darwin_amd64.tar.gz"
-      sha256 "c4a6fcb1e8c4b28454b0d84b32affb294d69a595b7c4080f93ba64ff79811474"
+      url "https://github.com/joerdav/xc/releases/download/v0.2.0/xc_0.2.0_darwin_amd64.tar.gz"
+      sha256 "50ceb0388e7b97e4150a5ac3081c5dd1d3625faad5274146394ddba6e71cd35a"
 
       def install
         bin.install "xc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/joerdav/xc/releases/download/v0.1.181/xc_0.1.181_darwin_arm64.tar.gz"
-      sha256 "8fd576eeab7508164228c0ae8470eeb388a37fbc1940e487bebfc9ab643c8bcf"
+      url "https://github.com/joerdav/xc/releases/download/v0.2.0/xc_0.2.0_darwin_arm64.tar.gz"
+      sha256 "ce3d3d7c91f92530f8b865f7d1ee6259dd746d488c3bb1640cff1e073fa33463"
 
       def install
         bin.install "xc"
@@ -28,25 +28,25 @@ class Xc < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/joerdav/xc/releases/download/v0.2.0/xc_0.2.0_linux_armv7.tar.gz"
+      sha256 "d2ae3504ea2efef945985cb1a6aab38f5d6f2f3043085fb0ea905c53c72437ec"
+
+      def install
+        bin.install "xc"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/joerdav/xc/releases/download/v0.1.181/xc_0.1.181_linux_arm64.tar.gz"
-      sha256 "d7e51fc04757c77dd8e42f6f2a148990883d64645839060ac5526357dadd8f99"
+      url "https://github.com/joerdav/xc/releases/download/v0.2.0/xc_0.2.0_linux_arm64.tar.gz"
+      sha256 "5b25d2345880360c096042fcb0c6e6dd2646bd4b274227e14937812a8b8502a5"
 
       def install
         bin.install "xc"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/joerdav/xc/releases/download/v0.1.181/xc_0.1.181_linux_amd64.tar.gz"
-      sha256 "25933e544e7687ed7d5c777e95e4b3c0a8288b46a0a60874362d526d6e07bcc2"
-
-      def install
-        bin.install "xc"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/joerdav/xc/releases/download/v0.1.181/xc_0.1.181_linux_armv7.tar.gz"
-      sha256 "27b766e3cd8c7d2c37eef1151c3e23ed82ef14ac83ef8b6753ed39fbfef5f210"
+      url "https://github.com/joerdav/xc/releases/download/v0.2.0/xc_0.2.0_linux_amd64.tar.gz"
+      sha256 "e11f11176040b9d49c141da2a2bb7c096c6cfe40dbcb34fa491478ff85c0ff33"
 
       def install
         bin.install "xc"
